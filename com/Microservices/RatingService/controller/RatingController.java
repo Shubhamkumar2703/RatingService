@@ -5,7 +5,6 @@ import com.Microservices.RatingService.repository.RatingRepository;
 import com.Microservices.RatingService.services.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +36,7 @@ public class RatingController {
         return ResponseEntity.ok(ratingService.getRatingByUserId(userId));
     }
 
-    //get all
+    //get all of hotels
     @GetMapping("/hotels/{hotelId}")
     public ResponseEntity<List<Rating>> getRatingsByHotelId(@PathVariable String hotelId){
         return ResponseEntity.ok(ratingService.getRatingByHotelId(hotelId));
